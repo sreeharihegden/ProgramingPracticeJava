@@ -13,6 +13,8 @@ public class Main {
         demoStackBalancedExpression();
 
         demoPriorityQueueArray();
+
+        demoHashTable();
     }
 
     public static void demoStack(){
@@ -69,5 +71,29 @@ public class Main {
         pqr.enqueue(4);
         System.out.println(pqr);
         System.out.println("Removing: " + pqr.dequeue());
+    }
+
+    public static void demoHashTable(){
+        System.out.println("\n****************");
+        System.out.println("In demoHashTable");
+        System.out.println("****************");
+
+        HashTable ht = new HashTable();
+        ht.put(6, "Sam"); // 1
+        ht.put(8, "Jon"); // 3
+        ht.put(11, "First"); // 3
+        ht.put(5, "Last"); // 0
+        ht.put(3, "Mid"); // 2
+        ht.put(6, "Out"); // 1
+        // ht.put(9, "Four"); // 4
+        System.out.println("Done Put HashTable.");
+        System.out.println("Value of 10: " + ht.get(10));
+        System.out.println("Value of 6: " + ht.get(6));
+        System.out.println("Value of 1: " + ht.get(1));
+        System.out.println("Value of 11: " + ht.get(11));
+        System.out.println("Value of 9: " + ht.get(9));
+        ht.remove(6);
+        System.out.println("Value of 6: " + ht.get(6));
+        // ht.remove(9);
     }
 }
