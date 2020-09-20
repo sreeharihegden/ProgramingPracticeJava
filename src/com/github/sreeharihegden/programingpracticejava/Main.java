@@ -11,6 +11,8 @@ public class Main {
         demoStack();
 
         demoStackBalancedExpression();
+
+        demoPriorityQueueArray();
     }
 
     public static void demoStack(){
@@ -32,7 +34,7 @@ public class Main {
     }
 
     public static void demoStackBalancedExpression(){
-        System.out.println("\n*****************************");
+        System.out.println("\n******************************");
         System.out.println("In demoStackBalancedExpression");
         System.out.println("******************************");
 
@@ -47,5 +49,25 @@ public class Main {
         for(String exp : expressionList){
             System.out.println(exp + " " + StackBalancedExpression.isBalanced(exp));
         }
+    }
+
+    public static void demoPriorityQueueArray(){
+        System.out.println("\n*************************");
+        System.out.println("In demoPriorityQueueArray");
+        System.out.println("*************************");
+
+        PriorityQueueArray pqr = new PriorityQueueArray(3);
+        pqr.enqueue(5);
+        pqr.enqueue(2);
+        pqr.enqueue(3);
+        System.out.println(pqr);
+        // pqr.enqueue(4);
+        System.out.println("Removing: " + pqr.dequeue());
+        System.out.println("Removing: " + pqr.dequeue());
+        System.out.println("Removing: " + pqr.dequeue());
+        // pqr.dequeue();
+        pqr.enqueue(4);
+        System.out.println(pqr);
+        System.out.println("Removing: " + pqr.dequeue());
     }
 }
