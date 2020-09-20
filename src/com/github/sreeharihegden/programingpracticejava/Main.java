@@ -1,10 +1,16 @@
 package com.github.sreeharihegden.programingpracticejava;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args){
         helloWorld.printHelloWorld();
+
         demoStack();
+
+        demoStackBalancedExpression();
     }
 
     public static void demoStack(){
@@ -23,5 +29,23 @@ public class Main {
         s.pop();
 
         s.display();
+    }
+
+    public static void demoStackBalancedExpression(){
+        System.out.println("\n*****************************");
+        System.out.println("In demoStackBalancedExpression");
+        System.out.println("******************************");
+
+        List<String> expressionList = new ArrayList<>();
+        expressionList.add("1+2)");
+        expressionList.add("(1+2)");
+        expressionList.add("(");
+        expressionList.add(")1+2(");
+        expressionList.add("((1+2)");
+        expressionList.add("(1+2>");
+
+        for(String exp : expressionList){
+            System.out.println(exp + " " + StackBalancedExpression.isBalanced(exp));
+        }
     }
 }
