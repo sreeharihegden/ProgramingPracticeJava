@@ -15,6 +15,8 @@ public class Main {
         demoPriorityQueueArray();
 
         demoHashTable();
+
+        demoTree();
     }
 
     public static void demoStack(){
@@ -95,5 +97,32 @@ public class Main {
         ht.remove(6);
         System.out.println("Value of 6: " + ht.get(6));
         // ht.remove(9);
+    }
+
+    public static void demoTree(){
+        System.out.println("\n***********");
+        System.out.println("In demoTree");
+        System.out.println("***********");
+
+        Tree tree = new Tree();
+        tree.insert(7);
+        tree.insert(4);
+        tree.insert(9);
+        tree.insert(1);
+        tree.insert(6);
+        tree.insert(8);
+        tree.insert(10);
+        System.out.println("Tree insert done.");
+        System.out.println("Find 10: " + tree.find(10));
+        System.out.println("Find 7: " + tree.find(7));
+        System.out.println("Find 12: " + tree.find(12));
+        System.out.println("Find 1: " + tree.find(1));
+        System.out.println("Find 9: " + tree.find(9));
+        System.out.println("PreOrder Traversal");
+        tree.traversePreOrder();
+        System.out.println("InOrder Traversal");
+        tree.traverseInOrder();
+        System.out.println("PostOrder Traversal");
+        tree.traversePostOrder();
     }
 }
