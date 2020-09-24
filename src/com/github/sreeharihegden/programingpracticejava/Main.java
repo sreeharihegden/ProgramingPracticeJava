@@ -202,5 +202,31 @@ public class Main {
         tree.traverseInOrder();
         System.out.println("PostOrder Traversal");
         tree.traversePostOrder();
+
+        System.out.println("Height: " + tree.height());
+        System.out.println("Min: " + tree.min());
+
+        Tree t2 = new  Tree();
+        t2.insert(7);
+        t2.insert(4);
+        t2.insert(9);
+        t2.insert(1);
+        t2.insert(6);
+        t2.insert(8);
+        t2.insert(10);
+        System.out.println("Equals t2: " + tree.equals(t2));
+        Tree t3 = new  Tree();
+        t3.insert(7);
+        t3.insert(4);
+        t3.insert(9);
+        t3.insert(1);
+        System.out.println("Equals t3: " + tree.equals(t3));
+        System.out.println("isBST t3: " + t3.isBST());
+
+        System.out.println("Nodes at distance 2 for tree: " + tree.getNodesAtKDistance(2));
+        System.out.println("Nodes at distance 2 for t3: " + t3.getNodesAtKDistance(2));
+
+        System.out.println("LevelOrder Traversal for tree");
+        tree.traverseLevelOrder();
     }
 }
