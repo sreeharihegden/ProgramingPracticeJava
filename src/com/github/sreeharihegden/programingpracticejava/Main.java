@@ -10,11 +10,13 @@ public class Main {
 
         demoStack();
 
+        demoStackBalancedExpression();
+
         demoQueue();
 
         demoQueueArray();
 
-        demoStackBalancedExpression();
+        demoQueueWithTwoStacks();
 
         demoPriorityQueueArray();
 
@@ -39,6 +41,24 @@ public class Main {
         s.pop();
 
         s.display();
+    }
+
+    public static void demoStackBalancedExpression(){
+        System.out.println("\n******************************");
+        System.out.println("In demoStackBalancedExpression");
+        System.out.println("******************************");
+
+        List<String> expressionList = new ArrayList<>();
+        expressionList.add("1+2)");
+        expressionList.add("(1+2)");
+        expressionList.add("(");
+        expressionList.add(")1+2(");
+        expressionList.add("((1+2)");
+        expressionList.add("(1+2>");
+
+        for(String exp : expressionList){
+            System.out.println(exp + " " + StackBalancedExpression.isBalanced(exp));
+        }
     }
 
     public static void demoQueue(){
@@ -93,22 +113,24 @@ public class Main {
         // q.enqueue(6);
     }
 
-    public static void demoStackBalancedExpression(){
-        System.out.println("\n******************************");
-        System.out.println("In demoStackBalancedExpression");
-        System.out.println("******************************");
+    public static void demoQueueWithTwoStacks(){
+        System.out.println("\n*************************");
+        System.out.println("In demoQueueWithTwoStacks");
+        System.out.println("*************************");
+        QueueWithTwoStacks q = new QueueWithTwoStacks();
 
-        List<String> expressionList = new ArrayList<>();
-        expressionList.add("1+2)");
-        expressionList.add("(1+2)");
-        expressionList.add("(");
-        expressionList.add(")1+2(");
-        expressionList.add("((1+2)");
-        expressionList.add("(1+2>");
+        // q.peek();
+        q.enqueue(100);
+        System.out.println("Peek: " + q.peek());
+        q.enqueue(50);
+        q.enqueue(200);
 
-        for(String exp : expressionList){
-            System.out.println(exp + " " + StackBalancedExpression.isBalanced(exp));
-        }
+        System.out.println(q.dequeue());
+        System.out.println("Peek: " + q.peek());
+        System.out.println(q.dequeue());
+        System.out.println(q.dequeue());
+        // q.peek();
+        // System.out.println(q.dequeue());
     }
 
     public static void demoPriorityQueueArray(){
