@@ -42,11 +42,13 @@ public class Queue {
             throw new IllegalStateException();
         }
 
-        Node temp = this.front;
+        // Node temp = this.front;
+        var data = this.front.data;
         this.front = this.front.next;
         if(isEmpty())
             this.rear = null;
-        return temp.data;
+        // return temp.data;
+        return data;
     }
 
     public int peek(){
