@@ -10,6 +10,10 @@ public class Main {
 
         demoStack();
 
+        demoQueue();
+
+        demoQueueArray();
+
         demoStackBalancedExpression();
 
         demoPriorityQueueArray();
@@ -35,6 +39,58 @@ public class Main {
         s.pop();
 
         s.display();
+    }
+
+    public static void demoQueue(){
+        System.out.println("\n************");
+        System.out.println("In demoQueue");
+        System.out.println("************");
+        Queue q = new Queue();
+
+        // q.peek();
+        q.enqueue(10);
+        System.out.println("Peek: " + q.peek());
+        q.enqueue(5);
+        q.enqueue(20);
+
+        System.out.println(q.dequeue());
+        System.out.println("Peek: " + q.peek());
+        System.out.println(q.dequeue());
+        System.out.println(q.dequeue());
+        // q.peek();
+        // System.out.println(q.dequeue());
+    }
+
+    public static void demoQueueArray(){
+        System.out.println("\n*****************");
+        System.out.println("In demoQueueArray");
+        System.out.println("*****************");
+        QueueArray q = new QueueArray(5);
+
+        // q.peek();
+        q.enqueue(10);
+        System.out.println(q);
+        System.out.println("Peek: " + q.peek());
+        q.enqueue(5);
+        q.enqueue(20);
+        System.out.println(q);
+
+        System.out.println(q.dequeue());
+        System.out.println("Peek: " + q.peek());
+        System.out.println(q.dequeue());
+        System.out.println(q.dequeue());
+        System.out.println(q);
+        // q.peek();
+        // System.out.println(q.dequeue());
+
+        q.enqueue(1);
+        q.enqueue(2);
+        q.enqueue(3);
+        q.enqueue(4);
+        q.enqueue(5);
+        System.out.println(q);
+        System.out.println("Peek: " + q.peek());
+        // q.enqueue(6);
     }
 
     public static void demoStackBalancedExpression(){
