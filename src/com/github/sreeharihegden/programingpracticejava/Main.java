@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args){
         helloWorld.printHelloWorld();
 
+        /*
         demoStack();
 
         demoStackBalancedExpression();
@@ -23,6 +24,10 @@ public class Main {
         demoHashTable();
 
         demoTree();
+
+        */
+
+        demoGraph();
     }
 
     public static void demoStack(){
@@ -228,5 +233,49 @@ public class Main {
 
         System.out.println("LevelOrder Traversal for tree");
         tree.traverseLevelOrder();
+    }
+
+    public static void demoGraph(){
+        System.out.println("\n************");
+        System.out.println("In demoGraph");
+        System.out.println("************");
+
+        Graph g = new Graph();
+        g.addNode("A");
+        g.addNode("B");
+        g.addNode("C");
+        g.addNode("D");
+
+        g.addEdge("A", "C");
+        g.addEdge("B", "A");
+        g.addEdge("A", "B");
+        g.addEdge("C", "D");
+
+        g.print();
+
+        // g.removeNode("B");
+        // g.print();
+        // g.removeEdge("A", "C");
+        // g.removeEdge("C", "A");
+        // g.print();
+
+        System.out.println("traverseDepthFirstRecursive(A)");
+        g.traverseDepthFirstRecursive("A");
+        System.out.println("traverseDepthFirstRecursive(B)");
+        g.traverseDepthFirstRecursive("B");
+
+        System.out.println("traverseDepthFirstIterative(A)");
+        g.traverseDepthFirst("A");
+        System.out.println("traverseDepthFirstIterative(B)");
+        g.traverseDepthFirst("B");
+
+        System.out.println("traverseBreadthFirstIterative(A)");
+        g.traverseBreadthFirst("A");
+        System.out.println("traverseBreadthFirstIterative(B)");
+        g.traverseBreadthFirst("B");
+
+        System.out.println("TopologicalSort");
+        List<String >sorted = g.topologicalSort();
+        System.out.println(sorted);
     }
 }
