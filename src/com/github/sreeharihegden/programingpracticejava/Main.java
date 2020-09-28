@@ -248,7 +248,7 @@ public class Main {
 
         g.addEdge("A", "C");
         g.addEdge("B", "A");
-        g.addEdge("A", "B");
+        // g.addEdge("A", "B");
         g.addEdge("C", "D");
 
         g.print();
@@ -277,5 +277,11 @@ public class Main {
         System.out.println("TopologicalSort");
         List<String >sorted = g.topologicalSort();
         System.out.println(sorted);
+
+        System.out.println("Detect Cycle");
+        System.out.println(g.hasCycle());
+        System.out.println("Adding Cycle Edge A to B");
+        g.addEdge("A", "B");
+        System.out.println(g.hasCycle());
     }
 }

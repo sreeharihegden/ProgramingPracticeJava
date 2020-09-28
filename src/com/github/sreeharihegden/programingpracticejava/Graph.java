@@ -166,4 +166,44 @@ public class Graph {
         }
         stack.push(rootNode);
     }
+
+    public boolean hasCycle(){
+        Set<Node> allNodes = new HashSet<>();
+        allNodes.addAll(nodes.values());
+
+        Set<Node> visiting = new HashSet<>();
+        Set<Node> visited = new HashSet<>();
+
+        while(!allNodes.isEmpty()){
+            // Set doesn't have a method to get an item by index.
+            // So convert to Array and pick the first item. But not very efficient as it will have to allocate some extra space, what if 1 million nodes?
+            // var current = allNodes.toArray(new Node[0])[0]; // As we make it Array it becomes instance of Object class, but hasCycle need Node object, so add new Node[0].
+            var current = allNodes.iterator().next();
+            if(hasCycle(current, allNodes, visiting, visited))
+                return true;
+        }
+
+        return false;
+    }
+
+    private boolean hasCycle(Node currentNode, Set<Node> allNodes, Set<Node> visiting, Set<Node> visited){
+        allNodes.remove(currentNode);
+        visiting.add(currentNode);
+
+        for(var neighbor : adjList.get(currentNode)){
+            if(visited.contains(neighbor))
+                continue;
+
+            if(visiting.contains(neighbor))
+                return true;
+
+            if(hasCycle(neighbor, allNodes, visiting, visited))
+                return true;
+        }
+
+        visiting.remove(currentNode);
+        visited.add(currentNode);
+
+        return false;
+    }
 }
