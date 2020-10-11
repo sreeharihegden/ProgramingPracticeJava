@@ -35,6 +35,8 @@ public class Main {
         demoSelectionSort();
 
         demoInsertionSort();
+
+        demoMergeSort();
     }
 
     public static void demoStack(){
@@ -298,7 +300,7 @@ public class Main {
         System.out.println("In demoBubbleSort");
         System.out.println("*****************");
 
-        int [] array = new int[] {7, 6, 0, 1, 2, 7, 5};
+        int [] array = new int[] {7, 6, 0, 1, 2, 7, 5, 7, 6, 0, 1, 2, 7, 5, 7, 6, 0, 1, 2, 7, 5};
         BubbleSort sorter = new BubbleSort();
         long start = System.nanoTime();
         sorter.sort(array);
@@ -312,7 +314,7 @@ public class Main {
         System.out.println("In demoSelectionSort");
         System.out.println("********************");
 
-        int [] array = new int[] {7, 6, 0, 1, 2, 7, 5};
+        int [] array = new int[] {7, 6, 0, 1, 2, 7, 5, 7, 6, 0, 1, 2, 7, 5, 7, 6, 0, 1, 2, 7, 5};
         SelectionSort sorter = new SelectionSort();
         long start = System.nanoTime();
         sorter.sort(array);
@@ -326,8 +328,22 @@ public class Main {
         System.out.println("In demoInsertionSort");
         System.out.println("********************");
 
-        int [] array = new int[] {7, 6, 0, 1, 2, 7, 5};
+        int [] array = new int[] {7, 6, 0, 1, 2, 7, 5, 7, 6, 0, 1, 2, 7, 5, 7, 6, 0, 1, 2, 7, 5};
         InsertionSort sorter = new InsertionSort();
+        long start = System.nanoTime();
+        sorter.sort(array);
+        long elapsedTime = System.nanoTime() - start;
+        System.out.println(Arrays.toString(array));
+        System.out.println("elapsedTime is: " + elapsedTime);
+    }
+
+    public static void demoMergeSort(){
+        System.out.println("\n****************");
+        System.out.println("In demoMergeSort");
+        System.out.println("****************");
+
+        int [] array = new int[] {7, 6, 0, 1, 2, 7, 5, 7, 6, 0, 1, 2, 7, 5, 7, 6, 0, 1, 2, 7, 5};
+        MergeSort sorter = new MergeSort();
         long start = System.nanoTime();
         sorter.sort(array);
         long elapsedTime = System.nanoTime() - start;
