@@ -1,6 +1,7 @@
 package com.github.sreeharihegden.programingpracticejava;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -25,9 +26,13 @@ public class Main {
 
         demoTree();
 
+        demoGraph();
+
         */
 
-        demoGraph();
+        demoBubbleSort();
+
+        demoSelectionSort();
     }
 
     public static void demoStack(){
@@ -283,5 +288,28 @@ public class Main {
         System.out.println("Adding Cycle Edge A to B");
         g.addEdge("A", "B");
         System.out.println(g.hasCycle());
+    }
+
+    // Sorting
+    public static void demoBubbleSort(){
+        System.out.println("\n*****************");
+        System.out.println("In demoBubbleSort");
+        System.out.println("*****************");
+
+        int [] array = new int[] {7, 6, 0, 1, 2, 7, 5};
+        BubbleSort sorter = new BubbleSort();
+        sorter.sort(array);
+        System.out.println(Arrays.toString(array));
+    }
+
+    public static void demoSelectionSort(){
+        System.out.println("\n********************");
+        System.out.println("In demoSelectionSort");
+        System.out.println("********************");
+
+        int [] array = new int[] {7, 3};
+        SelectionSort sorter = new SelectionSort();
+        sorter.sort(array);
+        System.out.println(Arrays.toString(array));
     }
 }
