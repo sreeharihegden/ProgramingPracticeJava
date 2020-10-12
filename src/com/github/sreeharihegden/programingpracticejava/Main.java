@@ -39,6 +39,8 @@ public class Main {
         demoMergeSort();
 
         demoQuickSort();
+
+        demoCountingSort();
     }
 
     public static void demoStack(){
@@ -362,6 +364,20 @@ public class Main {
         QuickSort sorter = new QuickSort();
         long start = System.nanoTime();
         sorter.sort(array);
+        long elapsedTime = System.nanoTime() - start;
+        System.out.println(Arrays.toString(array));
+        System.out.println("elapsedTime is: " + elapsedTime);
+    }
+
+    public static void demoCountingSort(){
+        System.out.println("\n*******************");
+        System.out.println("In demoCountingSort");
+        System.out.println("*******************");
+
+        int [] array = new int[] {7, 6, 0, 1, 2, 7, 5, 7, 6, 0, 1, 2, 7, 5, 7, 6, 0, 1, 2, 7, 5}; // For counting sort, only positive integers [0, k] allowed.
+        CountingSort sorter = new CountingSort();
+        long start = System.nanoTime();
+        sorter.sort(array, 7);
         long elapsedTime = System.nanoTime() - start;
         System.out.println(Arrays.toString(array));
         System.out.println("elapsedTime is: " + elapsedTime);
