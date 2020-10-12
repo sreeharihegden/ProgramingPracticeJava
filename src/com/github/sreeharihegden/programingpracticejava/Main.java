@@ -41,6 +41,8 @@ public class Main {
         demoQuickSort();
 
         demoCountingSort();
+
+        demoBucketSort();
     }
 
     public static void demoStack(){
@@ -378,6 +380,21 @@ public class Main {
         CountingSort sorter = new CountingSort();
         long start = System.nanoTime();
         sorter.sort(array, 7);
+        long elapsedTime = System.nanoTime() - start;
+        System.out.println(Arrays.toString(array));
+        System.out.println("elapsedTime is: " + elapsedTime);
+    }
+
+    public static void demoBucketSort(){
+        System.out.println("\n*****************");
+        System.out.println("In demoBucketSort");
+        System.out.println("*****************");
+
+        // int [] array = new int[] {7, 6, 0, 1, 2, -7, 5, 7, 6, 0, 1, 2, 7, 5, 7, 6, 0, 1, 2, 7, 5}; // Negative numbers not usually allowed in Bucket Sort. If numBuckets is 21, -7 in input works, but if numBuckets is 3 it errors.
+        int [] array = new int[] {7, 6, 0, 1, 2, 7, 5, 7, 6, 0, 1, 2, 7, 5, 7, 6, 0, 1, 2, 7, 5};
+        BucketSort sorter = new BucketSort();
+        long start = System.nanoTime();
+        sorter.sort(array, 3);
         long elapsedTime = System.nanoTime() - start;
         System.out.println(Arrays.toString(array));
         System.out.println("elapsedTime is: " + elapsedTime);
