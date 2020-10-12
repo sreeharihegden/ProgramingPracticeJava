@@ -37,6 +37,8 @@ public class Main {
         demoInsertionSort();
 
         demoMergeSort();
+
+        demoQuickSort();
     }
 
     public static void demoStack(){
@@ -344,6 +346,20 @@ public class Main {
 
         int [] array = new int[] {7, 6, 0, 1, 2, 7, 5, 7, 6, 0, 1, 2, 7, 5, 7, 6, 0, 1, 2, 7, 5};
         MergeSort sorter = new MergeSort();
+        long start = System.nanoTime();
+        sorter.sort(array);
+        long elapsedTime = System.nanoTime() - start;
+        System.out.println(Arrays.toString(array));
+        System.out.println("elapsedTime is: " + elapsedTime);
+    }
+
+    public static void demoQuickSort(){
+        System.out.println("\n****************");
+        System.out.println("In demoQuickSort");
+        System.out.println("****************");
+
+        int [] array = new int[] {7, 6, 0, 1, 2, 7, 5, 7, 6, 0, 1, 2, 7, 5, 7, 6, 0, 1, 2, 7, 5};
+        QuickSort sorter = new QuickSort();
         long start = System.nanoTime();
         sorter.sort(array);
         long elapsedTime = System.nanoTime() - start;
