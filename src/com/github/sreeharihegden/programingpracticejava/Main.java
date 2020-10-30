@@ -3,6 +3,7 @@ package com.github.sreeharihegden.programingpracticejava;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
@@ -43,8 +44,11 @@ public class Main {
 
         demoBucketSort();
 
-         */
         demoHeapSort();
+
+        */
+
+        demoHuffmanCode();
     }
 
     public static void demoStack(){
@@ -421,5 +425,31 @@ public class Main {
         elapsedTime = System.nanoTime() - start;
         System.out.println(Arrays.toString(array));
         System.out.println("elapsedTime is: " + elapsedTime);
+    }
+
+    public static void demoHuffmanCode() {
+        System.out.println("\n******************");
+        System.out.println("In demoHuffmanCode");
+        System.out.println("******************");
+
+        char[] charArray = { 'a', 'b', 'c', 'd', 'e', 'f' };
+        int[] charFrequency = { 5, 9, 12, 13, 16, 45 };
+        /*
+        Scanner s = new Scanner(System.in);
+        int numberChars = 6;
+        char[] charArray = new char[numberChars];
+        int[] charFrequency = new int[numberChars];
+        for(int i = 0; i<numberChars; i++){
+            System.out.println("Enter character " + i + " and its frequency separated by space:");
+            String input = s.nextLine();
+            charArray[i] = input.charAt(0);
+            charFrequency[i] = Integer.parseInt(input.substring(2));
+        }
+        */
+        System.out.println("Character Array is: " + new String(charArray));
+        System.out.println("Character Frequency Array is: " + Arrays.toString(charFrequency));
+        HuffmanCode hc = new HuffmanCode();
+        System.out.println("Huffman Code is: ");
+        hc.getHuffmanCode(charArray, charFrequency);
     }
 }
