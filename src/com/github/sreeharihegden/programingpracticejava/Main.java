@@ -28,8 +28,7 @@ public class Main {
 
         demoGraph();
 
-        */
-
+        // Sort
         demoBubbleSort();
 
         demoSelectionSort();
@@ -43,6 +42,9 @@ public class Main {
         demoCountingSort();
 
         demoBucketSort();
+
+         */
+        demoHeapSort();
     }
 
     public static void demoStack(){
@@ -396,6 +398,27 @@ public class Main {
         long start = System.nanoTime();
         sorter.sort(array, 3);
         long elapsedTime = System.nanoTime() - start;
+        System.out.println(Arrays.toString(array));
+        System.out.println("elapsedTime is: " + elapsedTime);
+    }
+
+    public static void demoHeapSort(){
+        System.out.println("\n***************");
+        System.out.println("In demoHeapSort");
+        System.out.println("***************");
+
+        int [] array = new int[] {10, 15, 20};
+        HeapSort sorter = new HeapSort();
+        long start = System.nanoTime();
+        sorter.sort(array);
+        long elapsedTime = System.nanoTime() - start;
+        System.out.println(Arrays.toString(array));
+        System.out.println("elapsedTime is: " + elapsedTime);
+
+        array = new int[] {10, 15, 20, 5};
+        start = System.nanoTime();
+        sorter.sort(array);
+        elapsedTime = System.nanoTime() - start;
         System.out.println(Arrays.toString(array));
         System.out.println("elapsedTime is: " + elapsedTime);
     }
