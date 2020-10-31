@@ -50,11 +50,11 @@ public class HuffmanCode {
         // Build the Huffman Tree.
         HuffmanNode root = null;
         while(q.size() > 1){
-            HuffmanNode x = q.peek();
-            q.poll();
+            HuffmanNode x = q.poll();
+            // q.poll();
 
-            HuffmanNode y = q.peek();
-            q.poll();
+            HuffmanNode y = q.poll();
+            // q.poll();
 
             HuffmanNode f = new HuffmanNode();
             f.frequency = x.frequency + y.frequency;
