@@ -52,10 +52,14 @@ public class HuffmanCode {
         while(q.size() > 1){
             // HuffmanNode x = q.peek();
             // q.poll();
+            // Though below works, peek to create HuffmanNode is performant as Java PQ using heap does heap[0] for peek.
+            // Whereas poll needs to do heapifyDown();
             HuffmanNode x = q.poll();
 
             // HuffmanNode y = q.peek();
             // q.poll();
+            // Though below works, peek to create HuffmanNode is performant as Java PQ using heap does heap[0] for peek.
+            // Whereas poll needs to do heapifyDown();
             HuffmanNode y = q.poll();
 
             HuffmanNode f = new HuffmanNode();
