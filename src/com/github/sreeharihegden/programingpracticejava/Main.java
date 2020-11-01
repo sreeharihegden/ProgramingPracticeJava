@@ -46,9 +46,10 @@ public class Main {
 
         demoHeapSort();
 
+        demoHuffmanCode();
         */
 
-        demoHuffmanCode();
+        demoMatrixMultiplication();
     }
 
     public static void demoStack(){
@@ -451,5 +452,15 @@ public class Main {
         HuffmanCode hc = new HuffmanCode();
         System.out.println("Huffman Code is: ");
         hc.getHuffmanCode(charArray, charFrequency);
+    }
+
+    // Extra
+    public static void demoMatrixMultiplication(){
+        System.out.println("\n***************************");
+        System.out.println("In demoMatrixMultiplication");
+        System.out.println("***************************");
+
+        MultiplyMatrices m = new MultiplyMatrices();
+        m.multiplyMatrices(m.firstMatrix, m.secondMatrix);
     }
 }
