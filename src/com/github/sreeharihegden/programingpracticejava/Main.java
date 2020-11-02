@@ -1,9 +1,7 @@
 package com.github.sreeharihegden.programingpracticejava;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class Main {
 
@@ -11,6 +9,8 @@ public class Main {
         helloWorld.printHelloWorld();
 
         /*
+        demoDynamicArray();
+
         demoStack();
 
         demoStackBalancedExpression();
@@ -47,9 +47,50 @@ public class Main {
         demoHeapSort();
 
         demoHuffmanCode();
-        */
 
+        // Extra
         demoMatrixMultiplication();
+        */
+        demoComparatorSort();
+    }
+
+    public static void demoDynamicArray(){
+        System.out.println("\n*******************");
+        System.out.println("In demoDynamicArray");
+        System.out.println("*******************");
+        DynamicArray arr = new DynamicArray(5);
+
+        System.out.println("Print Array");
+        arr.print();
+        arr.insert(5);
+        arr.insert(4);
+        arr.insert(8);
+        System.out.println("Print Array after insert");
+        arr.print();
+        arr.insertAt(3, 0);
+        arr.insertAt(7, 4);
+        arr.insertAt(10, 2);
+        System.out.println("Print Array after insertAt");
+        arr.print();
+        arr.reverse();
+        System.out.println("Print Array after reverse");
+        arr.print();
+        System.out.println("Max is: " + arr.max());
+        System.out.println("Index of Max is: " + arr.indexOf(arr.max()));
+        arr.removeAt(arr.indexOf(arr.max()));
+        System.out.println("Print Array after removeAt indexOf max");
+        arr.print();
+        System.out.println("New Max is : " + arr.max());
+        var other = new DynamicArray(4);
+        other.insert(4);
+        other.insert(1);
+        other.insert(10);
+        other.insert(8);
+        System.out.println("Print other");
+        other.print();
+        var intersection = arr.intersect(other);
+        System.out.println("Print intersection");
+        intersection.print();
     }
 
     public static void demoStack(){
@@ -462,5 +503,54 @@ public class Main {
 
         MultiplyMatrices m = new MultiplyMatrices();
         m.multiplyMatrices(m.firstMatrix, m.secondMatrix);
+    }
+
+    public static void demoComparatorSort(){
+        System.out.println("\n*********************");
+        System.out.println("In demoComparatorSort");
+        System.out.println("*********************");
+
+        int[] numbers = {4, 9, 1, 3, 2, 8, 7, 0, 6, 5};
+        System.out.println("Array: " + Arrays.toString(numbers));
+        Arrays.sort(numbers);
+        System.out.println("Sorted Array by Using Array.sort: " + Arrays.toString(numbers));
+
+        Student[] students = new Student[5];
+        students[0] = new Student("Jon", 25);
+        students[1] = new Student("Adam", 15);
+        students[2] = new Student("Jon", 23);
+        students[3] = new Student("Abin", 10);
+        students[4] = new Student("Bob", 15);
+        System.out.println("Students: " + Arrays.toString(students));
+        Arrays.sort(students, new Student.MyComparator());
+        System.out.println("Sorted Students by Using Comparator: " + Arrays.toString(students));
+
+        // Cannot do this due to return type of Collections.reverseOrder:
+        // Student.MyComparator descendingStudentComparator = Collections.reverseOrder(new Student.MyComparator());
+        Comparator<Student> descendingStudentComparator = Collections.reverseOrder(new Student.MyComparator());
+        Arrays.sort(students, descendingStudentComparator);
+        System.out.println("Descending order Sorted Students by Using Collections.reverseOrder: " + Arrays.toString(students));
+
+        Arrays.sort(students, (Student s1, Student s2)-> {
+            if(s1.fname.equals(s2.fname))
+                return s1.age - s2.age;
+            else
+                return s1.fname.compareTo(s2.fname);});
+        System.out.println("Sorted Students by Using Lambda: " + Arrays.toString(students));
+
+
+        List<Student> studentsList = new ArrayList<Student>();
+        for(Student student : students)
+            studentsList.add(student);
+
+        studentsList.sort((s1, s2) -> {
+            if(s1.fname.equals(s2.fname))
+                return s2.age - s1.age;
+            else
+                return s2.fname.compareTo(s1.fname);});
+        System.out.println("Descending order Sorted StudentsList by Using Lambda: " + studentsList);
+
+        studentsList.sort(Student::compareByNameThenAge);
+        System.out.println("Ascending order Sorted StudentsList by Using Reference to Static Method: " + studentsList);
     }
 }
