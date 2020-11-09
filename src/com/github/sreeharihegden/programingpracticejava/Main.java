@@ -50,8 +50,10 @@ public class Main {
 
         // Extra
         demoMatrixMultiplication();
-        */
+
         demoComparatorSort();
+        */
+        demoBitManipulation();
     }
 
     public static void demoDynamicArray(){
@@ -552,5 +554,33 @@ public class Main {
 
         studentsList.sort(Student::compareByNameThenAge);
         System.out.println("Ascending order Sorted StudentsList by Using Reference to Static Method: " + studentsList);
+    }
+
+    public static void demoBitManipulation() {
+        System.out.println("\n******************");
+        System.out.println("In BitManipulation");
+        System.out.println("******************");
+
+        BitManipulation obj = new BitManipulation();
+        obj.and(6, 129);
+        obj.or(6, 129);
+        obj.exclusiveor(7, 129);
+
+        obj.leftshift(129, 2);
+        obj.rightshift(129, 2);
+        obj.complement(2);
+
+        obj.checkKthBitSet(129, 4);
+        obj.checkKthBitSet(4, 3);
+        obj.setKthBit(129, 4);
+        obj.clearKthBit(129, 8);
+
+        obj.toggleKthBit(129, 3);
+        obj.toggleRightmostOneBit(5);
+        obj.toggleRightmostOneBit(4); // Won't work as rightmost bit is not 1.
+        obj.isolateRightmostOneBit(5);
+        obj.isolateRightmostOneBit(4); // Won't work as rightmost bit is not 1.
+        obj.isolateRightmostZeroBit(4); // Won't work as rightmost bit is not 1.
+        obj.isolateRightmostZeroBit(135);
     }
 }
