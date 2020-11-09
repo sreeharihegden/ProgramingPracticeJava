@@ -582,5 +582,19 @@ public class Main {
         obj.isolateRightmostOneBit(4); // Won't work as rightmost bit is not 1.
         obj.isolateRightmostZeroBit(4); // Won't work as rightmost bit is not 1.
         obj.isolateRightmostZeroBit(135);
+
+        obj.isPowerOf2(8);
+        obj.isPowerOf2(9);
+
+        obj.multiplyByPowerOf2(9, 1);
+        obj.multiplyByPowerOf2(9, 3);
+
+        obj.divideByPowerOf2(8, 3);
+        obj.divideByPowerOf2(8, 1);
+
+        obj.isEven(8);
+        obj.isEven(1);
+        obj.isEven(0);
+        obj.isEven(-5);
     }
 }

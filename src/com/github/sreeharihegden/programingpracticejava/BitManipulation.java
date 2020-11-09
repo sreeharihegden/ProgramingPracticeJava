@@ -88,4 +88,35 @@ public class BitManipulation {
                 + Integer.toBinaryString(~n2 & (n1+1)));
     }
 
+    public void isPowerOf2(int n1){
+        boolean result = false;
+        if((n1 & (n1-1)) == 0)
+            result = true;
+        else
+            result = false;
+
+        System.out.println("Bitwise Is Power of 2: " + n1 + " = "
+                + "if(" + Integer.toBinaryString(n1) + " & " + Integer.toBinaryString(n1-1) + ") == 0 = "
+                + result);
+    }
+
+    public void multiplyByPowerOf2(int n1, int n2){
+        System.out.println("Bitwise Multiply " + n1 + " by " + n2 + " nd Power of 2: = "
+                + Integer.toBinaryString(n1) + " << " + n2 + " = "
+                + (n1 << n2));
+    }
+
+    public void divideByPowerOf2(int n1, int n2){
+        System.out.println("Bitwise Divide " + n1 + " by " + n2 + " nd Power of 2: = "
+                + Integer.toBinaryString(n1) + " >> " + n2 + " = "
+                + (n1 >> n2));
+    }
+
+    public void isEven(int n1){
+        boolean result = ((n1&1)!=1) ? true:false;
+        System.out.println("Bitwise is Even using &: " + n1 + " = "
+                + "if(" + Integer.toBinaryString(n1) + " & " + Integer.toBinaryString(1) + ")!= 1 = "
+                + result);
+    }
+
 }
