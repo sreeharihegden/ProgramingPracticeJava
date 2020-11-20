@@ -52,8 +52,12 @@ public class Main {
         demoMatrixMultiplication();
 
         demoComparatorSort();
-        */
+
         demoBitManipulation();
+
+        */
+
+        demoTrie();
     }
 
     public static void demoDynamicArray(){
@@ -298,6 +302,45 @@ public class Main {
 
         System.out.println("LevelOrder Traversal for tree");
         tree.traverseLevelOrder();
+    }
+
+    public static void demoTrie(){
+        System.out.println("\n***********");
+        System.out.println("In demoTrie");
+        System.out.println("***********");
+
+        Trie trie = new Trie();
+        trie.insert("car");
+        trie.insert("cargo");
+        trie.insert("egg");
+        trie.insert("card");
+        trie.insert("example");
+        trie.insert("");
+        trie.insert(null);
+        System.out.println("Trie insert done.");
+
+        System.out.println("Trie contains car: " + trie.contains("car"));
+        System.out.println("Trie contains null: " + trie.contains(null));
+        System.out.println("Trie contains egg: " + trie.contains("egg"));
+        System.out.println("Trie contains space: " + trie.contains(" "));
+        System.out.println("Trie contains exam: " + trie.contains("exam"));
+
+        trie.traverse();
+
+        trie.remove(" ");
+        System.out.println("Trie contains space: " + trie.contains(" "));
+        trie.remove(null);
+        System.out.println("Trie contains null: " + trie.contains(null));
+        trie.remove("car");
+        System.out.println("Trie contains car: " + trie.contains("car"));
+        System.out.println("Trie contains card: " + trie.contains("card"));
+
+        trie.insert("car");
+        var words = trie.autoCompletedList("car");
+        System.out.println(words);
+
+        words = trie.autoCompletedList("");
+        System.out.println(words);
     }
 
     public static void demoGraph(){
