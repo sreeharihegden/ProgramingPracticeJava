@@ -29,6 +29,10 @@ public class Main {
 
         demoGraph();
 
+        demoTrie();
+
+        demoWeightedGraph();
+
         // Sort
         demoBubbleSort();
 
@@ -57,7 +61,7 @@ public class Main {
 
         */
 
-        demoTrie();
+        demoWeightedGraph();
     }
 
     public static void demoDynamicArray(){
@@ -391,6 +395,34 @@ public class Main {
         System.out.println("Adding Cycle Edge A to B");
         g.addEdge("A", "B");
         System.out.println(g.hasCycle());
+    }
+
+    public static void demoWeightedGraph(){
+        System.out.println("\n********************");
+        System.out.println("In demoWeightedGraph");
+        System.out.println("********************");
+
+        WeightedGraph wg = new WeightedGraph();
+        wg.addNode("A");
+        wg.addNode("B");
+        wg.addNode("C");
+        wg.addNode("D");
+        // wg.print();
+
+        wg.addEdge("A", "C", 10);
+        // wg.addEdge("C", "A", 5); This is create multiple edges between A and C, as we do not check if edge already exist.
+        wg.addEdge("A", "B", 3);
+        wg.addEdge("A", "D", 5);
+        wg.addEdge("B", "D", 1);
+        wg.print();
+
+        System.out.println("Shortest distance from A to C: " + wg.dijkstraShortestDistance("A", "C"));
+        System.out.println("Shortest distance from C to A: " + wg.dijkstraShortestDistance("C", "A"));
+        System.out.println("Shortest distance from A to B: " + wg.dijkstraShortestDistance("A", "B"));
+        System.out.println("Shortest distance from A to D: " + wg.dijkstraShortestDistance("A", "D"));
+        System.out.println("Shortest distance from B to D: " + wg.dijkstraShortestDistance("B", "D"));
+
+        System.out.println("Shortest Path from A to D: " + wg.dijkstraShortestPath("A", "D"));
     }
 
     // Sorting
