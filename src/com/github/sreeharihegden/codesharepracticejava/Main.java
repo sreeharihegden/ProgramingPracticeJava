@@ -1,7 +1,11 @@
 package com.github.sreeharihegden.codesharepracticejava;
 
 import java.awt.desktop.SystemEventListener;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
+import static com.github.sreeharihegden.codesharepracticejava.MissingNumberInArray.findMissing;
 
 public class Main {
 
@@ -88,5 +92,16 @@ public class Main {
         System.out.println("Input matrix is: ");
         displayMatrix(matrix);
         System.out.println("Length of Longest Increasing Path in the above matrix is: " + LIP.getLongestIncreasingPath(matrix));
+
+        // Missing Number In Array
+        System.out.println("Missing Number In Array");
+        List<Integer> input = new ArrayList<Integer>();
+        input.add(1);
+        input.add(3);
+        input.add(2);
+        input.add(4);
+        input.add(6);
+        System.out.println("Input is: " + input);
+        System.out.println("Missing number is: " + findMissing(input));
     }
 }
