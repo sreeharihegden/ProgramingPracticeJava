@@ -1,9 +1,7 @@
 package com.github.sreeharihegden.codesharepracticejava;
 
 import java.awt.desktop.SystemEventListener;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 import static com.github.sreeharihegden.codesharepracticejava.MissingNumberInArray.findMissing;
 
@@ -63,6 +61,7 @@ public class Main {
         }
         */
 
+        /*
         int matrix[][] = {
                 { 1, 15, 6},
                 { 12, 13, 6},
@@ -103,5 +102,45 @@ public class Main {
         input.add(6);
         System.out.println("Input is: " + input);
         System.out.println("Missing number is: " + findMissing(input));
+        */
+
+        System.out.println("========================");
+        System.out.println("Unique ID of Top K Users");
+        System.out.println("========================");
+        TopKUsers t1 = new TopKUsers();
+        /*
+        List<String> input = new ArrayList<>();
+        input.add("123, a");
+        input.add("234, b");
+        input.add("345, c");
+        input.add("456, d");
+        input.add("234, b");
+        input.add("234, b");
+        input.add("234, b");
+        input.add("345, c");
+        input.add("345, c");
+        input.add("345, c");
+        input.add("456, d");
+         */
+        List<Integer> input = new ArrayList<>();
+        input.add(123);
+        input.add(234);
+        input.add(345);
+        input.add(456);
+        input.add(234);
+        input.add(234);
+        input.add(234); // 234: 4
+        input.add(345); // 345: 2
+        input.add(456); // 456: 2
+        input.add(123);
+        input.add(123); // 123: 3
+        input.add(567);
+        input.add(567); // 567: 2
+        input.add(678); // 678: 1
+        System.out.print("Input array: ");
+        System.out.println(input);
+        int k = 4;
+        System.out.print("Top " + k + " users: ");
+        System.out.println(t1.getTopKUsers(input, k));
     }
 }
